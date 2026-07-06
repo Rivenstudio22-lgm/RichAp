@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RichAp - Educação Financeira</title>
+    <!-- CSS Separado -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- ================= PRIMEIRA TELA OBRIGATÓRIA ================= -->
+        <div id="screen-gate" class="screen active" style="margin-top: 15vh;">
+            <h1>RichAp</h1>
+            <p style="text-align: center; margin-bottom: 30px;">Aprende estratégias reais para ganhar dinheiro online em Moçambique.</p>
+            <button class="btn" onclick="showScreen('screen-login')">Iniciar Sessão</button>
+            <a href="https://escalepay.com" class="btn btn-outline" target="_blank">Criar Conta</a>
+        </div>
+
+        <!-- ================= TELA DE LOGIN ================= -->
+        <div id="screen-login" class="screen" style="margin-top: 10vh;">
+            <h1>RichAp - Login</h1>
+            <p style="text-align: center; margin-bottom: 20px;">Introduz os teus dados de acesso.</p>
+            
+            <div class="error-msg" id="login-error">Senha incorreta. Tenta novamente.</div>
+            
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" placeholder="teu@email.com">
+            </div>
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" placeholder="Introduz a senha universal">
+            </div>
+            
+            <button class="btn" onclick="handleLogin()">Entrar na Plataforma</button>
+            <button class="btn btn-outline" onclick="showScreen('screen-gate')" style="padding: 8px; font-size: 14px;">Voltar</button>
+        </div>
+
+        <!-- ================= CONTEÚDO PRINCIPAL (PÓS-LOGIN) ================= -->
+        <div id="app-wrapper" class="screen">
+            
+            <!-- Menu Principal -->
+            <nav id="main-nav"></nav>
+
+            <!-- DASHBOARD -->
+            <div id="view-dashboard" class="app-view">
+                <h1 style="text-align: left; margin-bottom: 5px;">Dashboard</h1>
+                <p><strong>Escolhe uma plataforma e executa.</strong> O segredo está na consistência e na prática direta no mercado local.</p>
+                <div class="grid" id="dashboard-grid"></div>
+            </div>
+
+            <!-- DROPSHIPPING -->
+            <div id="view-dropshipping" class="app-view" style="display:none;">
+                <h2>Dropshipping</h2>
+                <h3>O que é</h3>
+                <p>Vender produtos físicos na internet sem precisar de stock próprio. Tu és o intermediário entre o fornecedor e o cliente final.</p>
+                <h3>Como fazer em Moçambique</h3>
+                <p>Encontra fornecedores locais (grossistas na Baixa de Maputo, lojas de revenda) ou internacionais que facilitem o envio. Cria catálogos digitais atrativos.</p>
+                <h3>Onde vender</h3>
+                <ul>
+                    <li><strong>WhatsApp Business:</strong> Cria listas de transmissão, estados diários e usa o catálogo nativo.</li>
+                    <li><strong>Facebook & Marketplace:</strong> Publica em grupos de venda locais e impulsiona de forma orgânica.</li>
+                </ul>
+                <h3>Produtos que vendem (Nichos em alta)</h3>
+                <ul>
+                    <li><strong>Casa:</strong> Organizadores, utensílios práticos de cozinha.</li>
+                    <li><strong>Beleza:</strong> Maquilhagem, produtos de cabelo, modeladores.</li>
+                    <li><strong>Acessórios de telemóvel:</strong> Capas, películas, auriculares sem fios, powerbanks.</li>
+                    <li><strong>Fitness:</strong> Elásticos de treino, cintas modeladoras, garrafas motivacionais.</li>
+                </ul>
+                <h3>Erros comuns</h3>
+                <p>Não testar a qualidade do fornecedor antes, demorar a responder aos clientes e não calcular corretamente os custos de entrega (frete/estafeta).</p>
+            </div>
+
+            <!-- HOTMART -->
+            <div id="view-hotmart" class="app-view" style="display:none;">
+                <h2>Hotmart</h2>
+                <h3>Como vender como afiliado</h3>
+                <p>Promove produtos digitais (cursos, e-books) de outras pessoas e ganha comissões por cada venda realizada através do teu link exclusivo.</p>
+                <h3>Como escolher produtos</h3>
+                <p>Procura produtos com boa avaliação, página de vendas convincente e que ofereçam materiais de apoio para afiliados.</p>
+                <h3>Estratégias com Instagram e WhatsApp</h3>
+                <p>Cria um perfil de nicho no Instagram focado em resolver uma dor. Atrai as pessoas através de Reels estruturados e direciona os interessados para o teu WhatsApp.</p>
+                <h3>Nichos Lucrativos</h3>
+                <ul>
+                    <li><strong>Relacionamento:</strong> Como reconquistar, comunicação no casamento.</li>
+                    <li><strong>Emagrecimento:</strong> Dietas, receitas fit, rotinas de exercícios em casa.</li>
+                    <li><strong>Finanças:</strong> Investimentos para iniciantes, controlo de dívidas.</li>
+                    <li><strong>Autodesenvolvimento:</strong> Produtividade, inteligência emocional.</li>
+                </ul>
+            </div>
+
+            <!-- ESCALEPAY -->
+            <div id="view-escalepay" class="app-view" style="display:none;">
+                <h2>EscalePay</h2>
+                <h3>Criar produto digital simples</h3>
+                <p>Desenvolve um infoproduto direto ao ponto. Pode ser um manual em PDF (E-book) ou uma sequência de pequenos tutoriais em vídeo que resolvem um problema específico.</p>
+                <h3>Estrutura de oferta</h3>
+                <p>Garante que a tua página ou mensagem de vendas foca na transformação. Mostra claramente o estado atual do cliente (dor) e como o teu produto o leva ao estado desejado (sucesso).</p>
+                <h3>Checkout e pagamentos</h3>
+                <p>A EscalePay é ideal para processar vendas em Moçambique no automático, facilitando a conversão local sem complicações técnicas desnecessárias.</p>
+                <h3>Estratégias locais</h3>
+                <ul>
+                    <li><strong>WhatsApp & Orgânico:</strong> Captura leads em grupos de interesse e converte através do contacto direto.</li>
+                    <li><strong>Micro influenciadores:</strong> Faz parcerias com páginas locais de tamanho médio para divulgar o teu link.</li>
+                </ul>
+            </div>
+            <!-- KIWIFY -->
+            <div id="view-kiwify" class="app-view" style="display:none;">
+                <h2>Kiwify</h2>
+                <h3>Criar e hospedar produtos</h3>
+                <p>Usa a plataforma para alojar os teus cursos online de forma simples. A entrega dos acessos aos alunos é feita de forma 100% automatizada por e-mail após a compra.</p>
+                <h3>Páginas simples</h3>
+                <p>Não compliques o design. Uma página limpa com uma promessa forte, vídeo explicativo curto e um botão de compra direto gera mais conversões.</p>
+                <h3>Afiliados</h3>
+                <p>Podes abrir o teu produto para que outras pessoas o vendam por ti, multiplicando o teu alcance sem aumentar o teu esforço de vendas.</p>
+                <h3>Nichos recomendados</h3>
+                <ul>
+                    <li><strong>Cursos rápidos:</strong> Edição de vídeo pelo telemóvel, culinária básica, contabilidade prática.</li>
+                    <li><strong>Guias e Tutoriais:</strong> Passo a passo de importação, e-books de receitas exclusivas.</li>
+                </ul>
+            </div>
+
+            <!-- CAKTO -->
+            <div id="view-cakto" class="app-view" style="display:none;">
+                <h2>Cakto</h2>
+                <h3>Afiliado vs Produto próprio</h3>
+                <p><strong>Como Afiliado:</strong> Começo rápido, risco zero, validação imediata do mercado. <br><strong>Como Produtor:</strong> Maior margem de lucro, controlo total do cliente, construção de marca a longo prazo.</p>
+                <h3>Estratégias orgânicas e pagas</h3>
+                <ul>
+                    <li><strong>Estratégia Orgânica:</strong> Criação de conteúdo de valor contínuo no TikTok e Instagram focado em atração de tráfego gratuito.</li>
+                    <li><strong>Estratégia Paga:</strong> Anúncios direcionados para públicos específicos interessados na solução do produto.</li>
+                </ul>
+            </div>
+
+            <!-- MOÇAMBIQUE -->
+            <div id="view-mocambique" class="app-view" style="display:none;">
+                <h2>Estratégias para Moçambique</h2>
+                <h3>Como vender sem cartão de crédito</h3>
+                <p>O maior erro é exigir cartões internacionais. Facilita o processo indicando aos teus clientes como usar carteiras móveis ou métodos locais aceites em gateways integrados.</p>
+                <h3>Pagamentos locais</h3>
+                <p>Promove de forma explícita que aceitas pagamentos práticos e integrados. Isso quebra a principal barreira de desconfiança do comprador moçambicano.</p>
+                <h3>Uso forte de canais sociais</h3>
+                <p>O funil que mais converte em Moçambique baseia-se na confiança e proximidade:</p>
+                <ul>
+                    <li><strong>Facebook/Instagram:</strong> Atração visual e descoberta de novos clientes.</li>
+                    <li><strong>WhatsApp Business:</strong> Fecho da venda, envio de links de pagamento rápidos e suporte pós-venda.</li>
+                </ul>
+                <h3>Exemplo prático</h3>
+                <p><em>Caso:</em> Venda de um Guia de Importação da China. Publicas dicas rápidas num grupo de Facebook. Quem quiser o passo a passo completo clica num link que abre diretamente o teu WhatsApp. Envias o link do checkout, o cliente paga localmente e recebe o PDF de imediato no e-mail.</p>
+                <h3>Linguagem</h3>
+                <p>Comunica de forma simples, transparente e direta. Evita termos excessivamente técnicos que possam afastar ou confundir o teu público local.</p>
+            </div>
+
+            <!-- MENTALIDADE -->
+            <div id="view-mentalidade" class="app-view" style="display:none;">
+                <h2>Mentalidade & Execução</h2>
+                <h3>Foco no progresso diário</h3>
+                <p>O conhecimento sem ação não gera resultados. Dedica pelo menos 1 a 2 horas diárias exclusivamente à aplicação prática das estratégias explicadas aqui.</p>
+                <h3>Resiliência no mercado digital</h3>
+                <p>Nem todas as primeiras abordagens vão converter em venda imediatamente. Analisa os pontos onde os teus potenciais clientes perdem o interesse e ajusta continuamente.</p>
+                <h3>Gestão básica de ganhos</h3>
+                <p>Separa os valores faturados das tuas finanças pessoais. Reinvista uma parte do lucro obtido em melhorias no teu atendimento ou em pequenos testes de anúncios para escalar o teu negócio.</p>
+            </div>
+
+            <div class="back-to-dash" id="dash-footer" style="display: none;">
+                <button class="btn btn-outline" onclick="navigateTo('dashboard')">← Voltar ao Dashboard</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- JavaScript Separado -->
+    <script src="script.js"></script>
+</body>
+</html>
