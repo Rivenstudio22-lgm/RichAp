@@ -1,4 +1,4 @@
-/* ================= C S S (Estilos e Design) - PARTE 1 ================= */
+/* ================= C S S - PARTE 1 (Fundo Azul e Tipografia) ================= */
 * { 
     box-sizing: border-box; 
     margin: 0; 
@@ -7,33 +7,78 @@
 }
 
 body { 
-    background-color: #ffffff; 
-    color: #111111; 
-    line-height: 1.5; 
-    padding: 20px; 
+    background-color: #0a1128; /* Fundo Azul Escuro Premium */
+    color: #ffffff; 
+    line-height: 1.6; 
+    padding: 15px; 
 }
 
 .container { 
-    max-width: 600px; 
+    max-width: 500px; 
     margin: 0 auto; 
 }
 
-/* Tipografia */
-h1 { 
-    font-size: 26px; 
-    font-weight: 800; 
-    margin-bottom: 10px; 
-    text-align: center; 
-    letter-spacing: -0.5px; 
+/* Estrutura do Cabeçalho Superior */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5px;
+    margin-bottom: 40px;
 }
+
+.logo {
+    font-size: 20px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+.header-btns {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Conteúdo da Página Inicial */
+.hero-section {
+    padding: 10px 5px;
+}
+
+.badge {
+    display: inline-block;
+    border: 1px solid #ff333333;
+    background: #ff333311;
+    color: #ff4d4d; /* Realce Vermelho no Badge */
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    padding: 6px 14px;
+    border-radius: 50px;
+    margin-bottom: 25px;
+}
+
+h1 { 
+    font-size: 34px; 
+    font-weight: 800; 
+    line-height: 1.2;
+    margin-bottom: 20px; 
+    text-align: left; 
+    letter-spacing: -1px; 
+}
+
+.purple-text { color: #8a99ad; } /* Tom neutro suave para contraste */
+.yellow-text { color: #ff3333; } /* Palavra em destaque agora fica Vermelha */
 
 h2 { 
     font-size: 20px; 
     font-weight: 700; 
     margin-top: 25px; 
     margin-bottom: 15px; 
-    border-bottom: 2px solid #eeeeee; 
+    border-bottom: 2px solid #1c2541; 
     padding-bottom: 5px; 
+    color: #ff3333;
 }
 
 h3 { 
@@ -41,13 +86,19 @@ h3 {
     font-weight: 700; 
     margin-top: 15px; 
     margin-bottom: 5px; 
-    color: #333333; 
+    color: #48cae4; /* Azul claro para os subtítulos internos */
 }
 
 p { 
-    font-size: 15px; 
-    margin-bottom: 12px; 
-    color: #444444; 
+    font-size: 16px; 
+    margin-bottom: 15px; 
+    color: #e2eafc; 
+}
+
+.hero-desc {
+    color: #8a99ad;
+    font-size: 16px;
+    margin-bottom: 40px;
 }
 
 ul { 
@@ -58,122 +109,156 @@ ul {
 li { 
     font-size: 15px; 
     margin-bottom: 6px; 
-    color: #444444; 
+    color: #e2eafc; 
+}
+/* ================= C S S - PARTE 2 (Botões Vermelhos e Componentes) ================= */
+/* Botões do Topo */
+.btn-text {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 8px 12px;
 }
 
-/* Botões */
+.btn-top-accent {
+    background-color: #ff3333; /* Botão do topo Vermelho */
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 10px 16px;
+    border-radius: 8px;
+}
+
+/* Botões Principais Vermelhos */
 .btn { 
     display: block; 
     width: 100%; 
-    padding: 14px; 
-    background-color: #111111; 
-    color: #ffffff; 
+    padding: 16px; 
     text-align: center; 
     text-decoration: none; 
     font-size: 16px; 
-    font-weight: 600; 
+    font-weight: 700; 
     border: none; 
-    border-radius: 8px; 
+    border-radius: 10px; 
     cursor: pointer; 
-    margin-bottom: 12px; 
+    margin-bottom: 14px; 
+    transition: background 0.2s;
 }
 
-.btn:hover { 
-    background-color: #333333; 
+.btn-primary { 
+    background-color: #ff3333; /* Vermelho Vivo */
+    color: #ffffff; 
 }
 
-.btn-outline { 
-    background-color: #ffffff; 
-    color: #111111; 
-    border: 2px solid #111111; 
+.btn-primary:hover { 
+    background-color: #cc2424; /* Vermelho mais escuro ao passar o rato */
 }
 
-.btn-outline:hover { 
-    background-color: #f5f5f5; 
+.btn-secondary { 
+    background-color: transparent; 
+    color: #ffffff; 
+    border: 1px solid #1c2541;
 }
-/* ================= C S S (Estilos e Design) - PARTE 2 ================= */
-/* Formulários */
+
+.btn-secondary:hover { 
+    background-color: #1c2541; 
+}
+
+/* Botões das plataformas no Dashboard */
+.grid .btn-outline {
+    background-color: #ff3333;
+    color: #ffffff;
+    border: none;
+}
+
+.grid .btn-outline:hover {
+    background-color: #cc2424;
+}
+
+/* Formulários de Input adaptados ao fundo azul */
 .form-group { 
-    margin-bottom: 15px; 
+    margin-bottom: 20px; 
 }
 
 label { 
     display: block; 
     font-size: 14px; 
     font-weight: 600; 
-    margin-bottom: 5px; 
+    margin-bottom: 8px; 
+    color: #8a99ad;
 }
 
 input[type="email"], input[type="password"] { 
     width: 100%; 
-    padding: 12px; 
-    border: 2px solid #dddddd; 
+    padding: 14px; 
+    background-color: #1c2541; /* Caixa de texto levemente azulada */
+    border: 1px solid #24305e; 
     border-radius: 8px; 
     font-size: 16px; 
+    color: #ffffff;
     outline: none; 
 }
 
 input[type="email"]:focus, input[type="password"]:focus { 
-    border-color: #111111; 
+    border-color: #ff3333; 
 }
 
 .error-msg { 
-    color: #d9383a; 
+    color: #ff4d4d; 
     font-size: 14px; 
     font-weight: 600; 
-    margin-bottom: 10px; 
+    margin-bottom: 15px; 
     display: none; 
 }
 
-/* Menu de Navegação Superior (Pós-Login) */
+/* Menu Interno Pós-Login */
 nav { 
     display: flex; 
     flex-wrap: wrap; 
     gap: 8px; 
     margin-bottom: 25px; 
     padding-bottom: 15px; 
-    border-bottom: 1px solid #eeeeee; 
+    border-bottom: 1px solid #1c2541; 
 }
 
 nav button { 
-    background: #f4f4f4; 
-    border: none; 
-    padding: 8px 12px; 
+    background: #1c2541; 
+    border: 1px solid #24305e;
+    padding: 8px 14px; 
     border-radius: 6px; 
     font-size: 13px; 
     font-weight: 600; 
     cursor: pointer; 
-    color: #555555; 
-}
-
-nav button.active { 
-    background: #111111; 
     color: #ffffff; 
 }
 
-/* Grelha do Dashboard */
+nav button.active { 
+    background: #ff3333; 
+    color: #ffffff; 
+    border-color: #ff3333;
+}
+
+/* Dashboard Interno */
 .grid { 
     display: grid; 
     grid-template-columns: 1fr; 
     gap: 12px; 
-    margin-top: 20px; 
+    margin-top: 25px; 
 }
 
-@media(min-width: 480px) { 
+@media(min-width: 400px) { 
     .grid { grid-template-columns: 1fr 1fr; } 
 }
 
-/* Controle de Telas */
-.screen { 
-    display: none; 
-}
-
-.screen.active { 
-    display: block; 
-}
+.screen { display: none; }
+.screen.active { display: block; }
 
 .back-to-dash { 
-    margin-top: 30px; 
+    margin-top: 40px; 
     padding-top: 15px; 
-    border-top: 1px solid #eeeeee; 
+    border-top: 1px solid #1c2541; 
 }
