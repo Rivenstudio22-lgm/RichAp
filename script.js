@@ -26,7 +26,7 @@ function initApp() {
 
         if(mod.id !== 'dashboard') {
             const gridBtn = document.createElement('button');
-            gridBtn.className = 'btn btn-outline';
+            gridBtn.className = 'btn btn-outline'; // Aplica o design do novo CSS
             gridBtn.style.padding = '20px';
             gridBtn.style.fontSize = '15px';
             gridBtn.innerText = mod.name;
