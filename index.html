@@ -12,17 +12,34 @@
     <div class="container">
         
         <!-- ================= PRIMEIRA TELA OBRIGATÓRIA ================= -->
-        <div id="screen-gate" class="screen active" style="margin-top: 15vh;">
-            <h1>RichAp</h1>
-            <p style="text-align: center; margin-bottom: 30px;">Aprende estratégias reais para ganhar dinheiro online em Moçambique.</p>
-            <button class="btn" onclick="showScreen('screen-login')">Iniciar Sessão</button>
-            <a href="https://escalepay.com" class="btn btn-outline" target="_blank">Criar Conta</a>
+        <div id="screen-gate" class="screen active">
+            <!-- Barra Superior (Header) -->
+            <div class="header">
+                <div class="logo">RichAp</div>
+                <div class="header-btns">
+                    <button class="btn-text" onclick="showScreen('screen-login')">Entrar</button>
+                    <a href="https://escalepay.com" class="btn-top-accent" target="_blank">Criar conta</a>
+                </div>
+            </div>
+
+            <!-- Conteúdo Principal da Landing Page -->
+            <div class="hero-section">
+                <div class="badge">HUB DE ACESSO DIGITAL</div>
+                
+                <h1>Liga o painel.<br>Domina <span class="purple-text">tudo</span> o que precisas <span class="yellow-text">agora</span>.</h1>
+                
+                <p class="hero-desc">Um único acesso reúne estratégias, vendas como afiliado, dropshipping, mentalidade, ferramentas locais e dezenas de outras práticas. Sem andar a gerir dez assinaturas diferentes.</p>
+                
+                <a href="https://escalepay.com" class="btn btn-primary" target="_blank">Obter o meu acesso</a>
+                <button class="btn btn-secondary" onclick="showScreen('screen-login')">Já tenho conta</button>
+            </div>
         </div>
 
         <!-- ================= TELA DE LOGIN ================= -->
-        <div id="screen-login" class="screen" style="margin-top: 10vh;">
-            <h1>RichAp - Login</h1>
-            <p style="text-align: center; margin-bottom: 20px;">Introduz os teus dados de acesso.</p>
+        <div id="screen-login" class="screen" style="padding-top: 10vh;">
+            <div class="logo" style="margin-bottom: 20px;">RichAp</div>
+            <h2 style="border: none; text-align: center; margin-top: 0;">Iniciar Sessão</h2>
+            <p style="text-align: center; margin-bottom: 30px; color: #aaaaaa;">Introduz os teus dados de acesso.</p>
             
             <div class="error-msg" id="login-error">Senha incorreta. Tenta novamente.</div>
             
@@ -35,8 +52,8 @@
                 <input type="password" id="password" placeholder="Introduz a senha universal">
             </div>
             
-            <button class="btn" onclick="handleLogin()">Entrar na Plataforma</button>
-            <button class="btn btn-outline" onclick="showScreen('screen-gate')" style="padding: 8px; font-size: 14px;">Voltar</button>
+            <button class="btn btn-primary" onclick="handleLogin()">Entrar na Plataforma</button>
+            <button class="btn btn-secondary" onclick="showScreen('screen-gate')">Voltar</button>
         </div>
 
         <!-- ================= CONTEÚDO PRINCIPAL (PÓS-LOGIN) ================= -->
@@ -48,7 +65,7 @@
             <!-- DASHBOARD -->
             <div id="view-dashboard" class="app-view">
                 <h1 style="text-align: left; margin-bottom: 5px;">Dashboard</h1>
-                <p><strong>Escolhe uma plataforma e executa.</strong> O segredo está na consistência e na prática direta no mercado local.</p>
+                <p style="color: #aaaaaa;"><strong>Escolhe uma plataforma e executa.</strong> O segredo está na consistência e na prática direta no mercado local.</p>
                 <div class="grid" id="dashboard-grid"></div>
             </div>
 
@@ -83,7 +100,7 @@
                 <h3>Como escolher produtos</h3>
                 <p>Procura produtos com boa avaliação, página de vendas convincente e que ofereçam materiais de apoio para afiliados.</p>
                 <h3>Estratégias com Instagram e WhatsApp</h3>
-                <p>Cria um perfil de nicho no Instagram focado em resolver uma dor. Atrai as pessoas através de Reels estruturados e direciona os interessados para o teu WhatsApp.</p>
+                <p>Cria um perfil de nicho no Instagram focado em resolver uma dor. Atrai as pessoas através de Reels estruturados e direcionas os interessados para o teu WhatsApp.</p>
                 <h3>Nichos Lucrativos</h3>
                 <ul>
                     <li><strong>Relacionamento:</strong> Como reconquistar, comunicação no casamento.</li>
